@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhập 1 số bất kì >0</h2>
+<input type="text" id="nhapso">
+<input type="button" value="Check" onclick="soNguyenTo()">
+<script>
+    function isPrime(number) {
+        if(number<=1) return false
+        else if(number == 2 || number == 3) return true
+        else if(number%2 == 0) return false
+        else {
+            for (let i=3; i<number; i+=2) {
+                if(number%i==0) {
+                    return false
+                }
+            }
+        }
+        return true
+    }
+    function soNguyenTo() {
+        let so = document.getElementById("nhapso")
+        let kiemtra =isPrime(so.value)
+        if(kiemtra) {
+            document.write(so.value + " :là một số nguyên tố ")
+        }else {
+            document.write(so.value + " :không phải là số nguyên tố")
+        }
+
+    }
+</script>
+</body>
+</html>

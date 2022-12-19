@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Chuyển đổi giữa feet <----> meters</h2>
+<label for="nhapso">
+</label><input type="text" id="nhapso">
+<select id="luachon">
+    <option value="feet">feet</option>
+    <option value="meters">Meters</option>
+</select>
+<input type="button" value="Kiem Tra" onclick="chuyendoi()">
+<p id="ketQua"></p>
+<script>
+    function FeetToMeter(feet) {
+        return 0.305 * feet
+    }
+    function MeterToFeet(meters){
+        return 3.279 * meters
+    }
+    function chuyendoi() {
+        let luachon = document.getElementById("luachon")
+        let giatri = document.getElementById("nhapso")
+        let ketqua
+        if(luachon.value === "feet"){
+            ketqua= FeetToMeter(giatri.value)
+            document.getElementById("ketQua").innerHTML = "Kết quả = "+ketqua+" meters"
+        }else{
+            ketqua= MeterToFeet(giatri.value)
+            document.getElementById("ketQua").innerHTML = "Kết quả = "+ketqua+" feet"
+        }
+    }
+</script>
+</body>
+</html>

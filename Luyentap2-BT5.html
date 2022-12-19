@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Nhấp vào đây" onclick="bamVo()"> <br>
+<script>
+    function timMin(mang_so) {
+        let min=mang_so[0]
+        for (let i=0; i<mang_so.length; i++){
+            if (mang_so[i]< min){
+                min = mang_so[i]
+            }
+        }
+        return min
+    }
+    function bamVo() {
+         do {
+             let check = true
+             let arr = prompt("Nhập 3 số nguyên cách nhau bằng dấu cách ").split(" ")
+             for (let i = 0; i < arr.length; i++) {
+                 if (isNaN(arr[i])){
+                     alert('Các phần tử mày vừa nhập không phải số nguyên , nhập lại đi !')
+                     check = false
+                     break
+                 }
+             }
+             if (check){
+                 let min =timMin (arr)
+                 document.write("Mảng số gồm ["+ arr +"] <br>")
+                 document.write("Số nhỏ nhất trong dãy là :" + min)
+                  break;
+             }
+         }while (true)
+    }
+</script>
+</body>
+</html>

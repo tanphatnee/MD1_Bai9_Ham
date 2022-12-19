@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="Nhấp vào đây" onclick="bamVoDay()"> <br>
+<script>
+    function tinhMin(mangSo) {
+        let backup
+        for (let i = 1; i < mangSo.length; i++) {
+            backup = mangSo[0]
+            if (mangSo[i] < backup){
+                backup = mangSo[i]
+            }
+        }
+        return backup
+    }
+    function bamVoDay() {
+        let mangSo = []
+        for (let i = 1; i < 4; i++) {
+            mangSo.push(+prompt("Nhap so nguyen thu :" + i))
+        }
+        let min = tinhMin(mangSo)
+        document.write("mang so gom [" +mangSo +"] <br>")
+        document.write("So nho nhat trong day la :" + min)
+    }
+</script>
+</body>
+</html>
